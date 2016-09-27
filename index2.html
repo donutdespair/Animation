@@ -9,7 +9,6 @@ body {background-color: black; font-family: 'Russo One', sans-serif;
 }
 .dropbutton {
     background-color: teal;
-    position: relative;
     color: white;
     padding: 16px;
     font-size: 20px;
@@ -25,16 +24,12 @@ body {background-color: black; font-family: 'Russo One', sans-serif;
 
 .dropdown {
     position: relative;
-    z-index: 4;
-    left: 550px;
     display: inline-block;
-    
-    
 }
 
 .listItems {
     display: none;
-    position: relative;
+    position: absolute;
     background-color: teal;
     min-width: 160px;
     overflow: auto;
@@ -43,7 +38,6 @@ body {background-color: black; font-family: 'Russo One', sans-serif;
 
 .listItems a {
     color: pink;
-    position: relative;
     font-size: 20px;
     padding: 12px 16px;
     text-decoration: none;
@@ -59,15 +53,14 @@ body {background-color: black; font-family: 'Russo One', sans-serif;
 		background-color: transparent;
 		position: relative;
 		z-index: -1;
-    pointer-events: none;
 	}
 	#myAnimation {
 		width: 250px;
-		position: absolute;
+		position: relative;
 	  z-index: 2;
-    top: 700px;
+		position: absolute;
+    top: 460px;
     left: 510px;
-    pointer-events: none;
 	}
   #proteinTop{
     position: relative;
@@ -75,7 +68,6 @@ body {background-color: black; font-family: 'Russo One', sans-serif;
     top: -100px;
     z-index: 1;
     width: 600px;
-    pointer-events: none;
   }
   #proteinBottom{
     position: relative;
@@ -83,12 +75,11 @@ body {background-color: black; font-family: 'Russo One', sans-serif;
     top: -108px;
     z-index: 3;
     width: 600px;
-    pointer-events: none;
   }
   .button {
     background-color: pink; 
     font-family:'Russo One', sans-serif;
-    width: 255px;
+    width: 245px;
     border: none;
     color: teal;
     padding: 15px 32px;
@@ -97,16 +88,6 @@ body {background-color: black; font-family: 'Russo One', sans-serif;
     display: inline-block;
     font-size: 20px;
 }
-    #thisischeat { /*this was a quick fix since my menu was on the left and I don't remember hearing you say to center it*/
-      position: relative;
-      width: 600px;
-      height: 400px;
-      background-color: black;
-      left: 500px; 
-      top: -670px;
-      z-index: 3;
-    }
-
 </style>
 </head>
 <body>
@@ -126,7 +107,6 @@ body {background-color: black; font-family: 'Russo One', sans-serif;
 <div id="proteinBottom"><img src="proteinbottom.png"></div>
 <div id="myContainer"></div>
 <div id="myAnimation"><img src="muscle.png" width="350" ></div>
-<div id="thisischeat"></div>
 <script>
 
 function myFunction() {
