@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+@import 'https://fonts.googleapis.com/css?family=Russo+One';
+body {background-color: black; font-family: 'Russo One', sans-serif; 
+
+}
+.dropbutton {
+    background-color: teal;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family:'Russo One', sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbutton:hover, .dropbutton:focus {
+    background-color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.listItems {
+    display: none;
+    position: absolute;
+    background-color: teal;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.listItems a {
+    color: pink;
+    font-size: 20px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.listItems a:hover {background-color: gray;}
+
+.show {display:block;}
+	#myContainer {
+		width: 550px;
+		height: 550px;
+		background-color: transparent;
+		position: relative;
+		z-index: -1;
+	}
+	#myAnimation {
+		width: 250px;
+		position: relative;
+	  z-index: 2;
+		position: absolute;
+    top: 460px;
+    left: 510px;
+	}
+  #proteinTop{
+    position: relative;
+    left: 200px;
+    top: -100px;
+    z-index: 1;
+    width: 600px;
+  }
+  #proteinBottom{
+    position: relative;
+    left: 309px;
+    top: -108px;
+    z-index: 3;
+    width: 600px;
+  }
+  .button {
+    background-color: pink; 
+    font-family:'Russo One', sans-serif;
+    width: 245px;
+    border: none;
+    color: teal;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbutton">Do You Even Lift?</button>
+  <div id="myDropdown" class="listItems">
+    <a href="http://vignette4.wikia.nocookie.net/walkingdead/images/c/cc/Grandma_-_What_is_this_i_don't_even.jpg/revision/latest?cb=20131109151911" target="_blank">What even?</a>
+    <a href="http://www.myg37.com/forums/attachments/sports/98385d1377186840-lifting-meme-serous.jpg" target="_blank">I do mostly cardio.</a>
+    <a href="http://66.media.tumblr.com/d3a8d76622b908bfb3d4fa2145e9731e/tumblr_o82fpq76Jy1udkhfio1_1280.jpg" target="_blank">Several times a week.</a>
+     <a href="http://s2.quickmeme.com/img/6d/6d2e882090ad92f5e13c588190db89defe7371d047f4e61048840965b68f3622.jpg" target="_blank">Every. Day. Bruh.</a>
+      <a href ="http://i2.kym-cdn.com/photos/images/facebook/000/422/946/643.jpg" target="_blank">All I do is lift.</a>
+      <button onclick="Move()" class="button">Seeking Swolmate</button>
+  </div>
+</div><br><br>
+<div id="proteinTop"><img src="proteintop.png"></div>
+<div id="proteinBottom"><img src="proteinbottom.png"></div>
+<div id="myContainer"></div>
+<div id="myAnimation"><img src="muscle.png" width="350" ></div>
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbutton')) {
+
+    var dropdowns = document.getElementsByClassName("listItems");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function Move() {
+var elem = document.getElementById("myAnimation");
+var pos = 0;
+var id = setInterval(frame, 10);
+function frame() {
+	if (pos == 290) {
+		clearInterval(id);
+	}else{
+		pos++;
+		elem.style.top = pos + 'px';
+		
+	}
+}
+}
+</script>
+
+</body>
+</html>
